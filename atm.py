@@ -4,7 +4,6 @@ s_inicial = 400
 s_atual = s_inicial
 
 def retirar(s_atual,q):
-    q = float(input('Indique a quantidade que deseja retirar: '))
     if q < 0 or q > s_atual:
         if q > s_atual:
             os.system('cls')
@@ -25,7 +24,6 @@ def retirar(s_atual,q):
         return s_atual
 
 def deposito(s_atual,dep):
-    dep = float(input('Indique a quantidade que deseja depositar: '))
     if dep < 0:
         os.system('cls')
         print('Não pode depositar quantidades negativas')
@@ -54,10 +52,14 @@ while True:
     escolha = input("Escolha a opção desejada: ")
     
     if escolha == "1":
-        retirar()
+        os.system('cls')
+        q = float(input('Indique a quantidade que deseja retirar: '))
+        s_atual=retirar(s_atual,q)
         pass
     elif escolha == "2":
-        deposito()
+        os.system('cls')
+        dep = float(input('Indique a quantidade que deseja depositar: '))
+        s_atual=deposito(s_atual,dep)
         pass
     elif escolha == "3":
         saldo()
